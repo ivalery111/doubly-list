@@ -14,3 +14,6 @@ node_t *create_node(void *data) {
 
     return new_node;
 }
+
+void add_prev(node_t *current, node_t *new_node){
+}

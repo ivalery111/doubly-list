@@ -21,4 +21,13 @@ typedef struct node {
  */
 node_t *create_node(void *data);
 
+/**
+ * add_prev - Add new node to the left of the list
+ * 
+ * @current: node to which add new node
+ * @new_node: new node that need to add
+ * 
+ */
+void add_prev(node_t *current, node_t *new_node); 
+
 #endif
