@@ -41,7 +41,25 @@ void test_add_prev() {
     printf("test_add_prev done!\n");
 }
 
+void test_add_to_end(){
+
+    node_t *head = NULL;
+
+    int a = 3;
+    add_to_end(&head, create_node(&a));
+    assert( *((int *)head->data) == 3);
+    assert(head->prev == NULL);
+
+    int b = 1;
+    add_to_end(&head, create_node(&b));
+    assert( *((int *)head->data) == 3);
+    assert(*((int *)head->next->data) == 1);
+
+    printf("test_add_to_end done!\n");
+}
+
 int main(void) {
     test_create_node();
     test_add_prev();
+    test_add_to_end();
 }
