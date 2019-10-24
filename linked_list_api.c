@@ -26,3 +26,21 @@ void add_prev(node_t *current, node_t *new_node) {
             new_node->prev->next = new_node;
     }
 }
+
+void add_to_end(node_t **list, node_t *new_node) {
+
+    if (*list == NULL) {
+        *list = new_node;
+        new_node->prev = NULL;
+        return;
+    }
+
+    node_t *current = *list;
+
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    current->next = new_node;
+    new_node->prev = current;
+}
