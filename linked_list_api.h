@@ -30,4 +30,11 @@ node_t *create_node(void *data);
  */
 void add_prev(node_t *current, node_t *new_node);
 
+/**
+ * add_to_end - Add @new_node to the end of the list
+ *
+ * @begin: begin point of the list
+ * @new_node: node to add
+ */
+void add_to_end(node_t **begin, node_t *new_node);
 #endif
