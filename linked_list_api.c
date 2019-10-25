@@ -44,3 +44,19 @@ void add_to_end(node_t **list, node_t *new_node) {
     current->next = new_node;
     new_node->prev = current;
 }
+
+node_t *find_node(node_t **begin, void *data) {
+
+    if (*begin == NULL)
+        return NULL;
+
+    node_t *current = *begin;
+
+    while (current != NULL) {
+        if (current->data == data) {
+            return current;
+        }
+        current = current->next;
+    }
+    return NULL;
+}

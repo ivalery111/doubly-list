@@ -37,4 +37,12 @@ void add_prev(node_t *current, node_t *new_node);
  * @new_node: node to add
  */
 void add_to_end(node_t **begin, node_t *new_node);
+
+/**
+ * find_node - find node in list with @data value
+ * 
+ * @begin: begin point of the list
+ * @data: data to search
+ */
+node_t *find_node(node_t **begin, void *data);
 #endif
