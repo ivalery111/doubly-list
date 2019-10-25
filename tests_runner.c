@@ -58,8 +58,35 @@ void test_add_to_end(){
     printf("test_add_to_end done!\n");
 }
 
+void test_find_node() {
+
+    int a = 5;
+    int b = 7;
+    char c = 'c';
+    char *sz = "szStr";
+    double d = 2.3;
+    int not_in_list = 123;
+
+    node_t *head = NULL;
+
+    assert(find_node(&head,create_node(&a)) == NULL);
+
+    add_to_end(&head, create_node(&a));
+    add_to_end(&head, create_node(&c));
+    add_to_end(&head, create_node(&b));
+    add_to_end(&head, create_node(sz));
+    add_to_end(&head, create_node(&d));
+
+    assert(*((int *)find_node(&head,&b)->data) == b);
+    assert(find_node(&head, create_node(&not_in_list)) == NULL);
+
+    puts("test_find_node done!");
+
+}
+
 int main(void) {
     test_create_node();
     test_add_prev();
     test_add_to_end();
+    test_find_node();
 }
